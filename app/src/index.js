@@ -17,4 +17,3 @@ const store = createStore(
 sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(<App store={store} />, document.getElementById('root'));
-

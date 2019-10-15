@@ -9,8 +9,7 @@ class App extends Component {
 
     return (
       <Provider store={store}>
-        <BrowserRouter>
-        </BrowserRouter>
+        <BrowserRouter />
       </Provider>
     );
   }
