@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import StoreItem from 'components/StoreItem';
 
 class CartPage extends React.PureComponent {
   componentDidMount() {
@@ -9,7 +10,11 @@ class CartPage extends React.PureComponent {
 
   render() {
     const { items } = this.props;
-    return JSON.stringify(items);
+    return (
+      <div className="cartPage">
+        { items.map((item) => <StoreItem key={item.id} {...item} />) }
+      </div>
+    );
   }
 }
 
@@ -20,7 +25,7 @@ CartPage.propTypes = {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
-    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     amount: PropTypes.number.isRequired,
   })).isRequired,
 };
