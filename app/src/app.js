@@ -1,11 +1,25 @@
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
   render() {
+    const { store } = this.props;
+
     return (
-      <h1>Hello, world!</h1>
+      <Provider store={store}>
+        <BrowserRouter>
+        </BrowserRouter>
+      </Provider>
     );
   }
 }
+
+
+App.propTypes = {
+  store: PropTypes.object.isRequired,
+};
+
 
 export default App;
