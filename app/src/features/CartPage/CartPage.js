@@ -27,7 +27,7 @@ CartPage.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-    amount: PropTypes.number.isRequired,
+    amount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   })).isRequired,
 };
 

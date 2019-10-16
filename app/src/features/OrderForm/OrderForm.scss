@@ -1,0 +1,33 @@
+.orderForm {
+  background-color: darkgrey;
+  min-width: 320px;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 15px;
+  position: relative;
+
+
+  input, textarea, button {
+    border: solid 1px #e0dddb;
+    border-bottom: 0;
+    box-sizing: border-box;         /* Opera/IE 8+ */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    display: block;
+    height: 50px;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+  }
+
+  button {
+    border-bottom: 0;
+  }
+
+  .error {
+    background-color: lightcoral;
+    color: darkred;
+    outline: 1px solid red;
+    padding: 15px;
+  }
+}
