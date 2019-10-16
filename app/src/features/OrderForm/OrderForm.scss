@@ -23,4 +23,11 @@
   button {
     border-bottom: 0;
   }
+
+  .error {
+    background-color: lightcoral;
+    color: darkred;
+    outline: 1px solid red;
+    padding: 15px;
+  }
 }

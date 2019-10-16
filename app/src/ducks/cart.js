@@ -58,8 +58,8 @@ function* requestAddItem({ payload }) {
   try {
     yield post(url, payload);
     yield put(setSuccess('orderForm'));
-  } catch (err) {
-    yield put(setError('orderForm'));
+  } catch ({ response: { data } = {} }) {
+    yield put(setError('orderForm', data));
   }
 }
 

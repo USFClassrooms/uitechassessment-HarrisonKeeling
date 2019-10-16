@@ -26,9 +26,13 @@ class OrderForm extends React.PureComponent {
   }
 
   render() {
+    const { addError } = this.props;
     return (
       <div className="orderForm">
-        <form onSubmit={this.submitOrder}>
+        { addError && (
+          <p className="error">{addError}</p>
+        )}
+        <form noValidate onSubmit={this.submitOrder}>
           <input
             onChange={this.onChange}
             name="name"
@@ -62,8 +66,13 @@ class OrderForm extends React.PureComponent {
 
 OrderForm.propTypes = {
   addItem: PropTypes.func.isRequired,
+  addError: PropTypes.string,
   clearError: PropTypes.func.isRequired,
   clearSuccess: PropTypes.func.isRequired,
+};
+
+OrderForm.defaultProps = {
+  addError: null,
 };
 
 export default OrderForm;

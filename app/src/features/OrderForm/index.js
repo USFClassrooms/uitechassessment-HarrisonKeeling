@@ -14,6 +14,7 @@ class OrderFormContainer extends React.PureComponent {
     }
     return (
       <OrderForm
+        addError={this.props.addError}
         addItem={this.props.addItem}
         clearError={this.props.clearError}
         clearSuccess={this.props.clearSuccess}
@@ -32,6 +33,7 @@ function mapDispatchToProps(dispatch) {
 
 function mapStateToProps(state) {
   return {
+    addError: selectError(state, 'orderForm'),
     addSuccess: selectSuccess(state, 'orderForm'),
     addFailure: selectError(state, 'orderForm'),
   };
@@ -39,12 +41,14 @@ function mapStateToProps(state) {
 
 OrderFormContainer.propTypes = {
   addItem: PropTypes.func.isRequired,
+  addError: PropTypes.string,
   addSuccess: PropTypes.bool,
   clearError: PropTypes.func.isRequired,
   clearSuccess: PropTypes.func.isRequired,
 };
 
 OrderFormContainer.defaultProps = {
+  addError: null,
   addSuccess: null,
 };
 
