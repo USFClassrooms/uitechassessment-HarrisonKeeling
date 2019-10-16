@@ -58,7 +58,11 @@ function* requestAddItem({ payload }) {
   try {
     yield post(url, payload);
     yield put(setSuccess('orderForm'));
-  } catch ({ response: { data } = {} }) {
+  } catch ({
+    response: { data } = {
+      data: 'Request failed, check API CORS policy or if API is running.',
+    },
+  }) {
     yield put(setError('orderForm', data));
   }
 }
