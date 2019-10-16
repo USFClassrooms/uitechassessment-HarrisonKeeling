@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import StoreItem from 'components/StoreItem';
+import './CartPage.scss';
 
 class CartPage extends React.PureComponent {
   componentDidMount() {
