@@ -1,0 +1,23 @@
+.storeItem {
+  background-color: rgba(0, 0, 0, 0.25);
+  color: white;
+  position: relative;
+
+  .header {
+    h2 {
+      margin: 0;
+    }
+
+    .id {
+      padding: 10px;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .amount {
+    background-color: transparent;
+    display: inline-block;
+  }
+}

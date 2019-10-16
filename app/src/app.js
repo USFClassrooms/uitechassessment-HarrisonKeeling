@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
+import CartPage from 'features/CartPage';
 
-class App extends Component {
-  render() {
-    const { store } = this.props;
+function App(props) {
+  const { store } = props;
 
-    return (
-      <Provider store={store}>
-        <BrowserRouter />
-      </Provider>
-    );
-  }
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Route exact path="/cart" component={CartPage} />
+      </BrowserRouter>
+    </Provider>
+  );
 }
 
 
