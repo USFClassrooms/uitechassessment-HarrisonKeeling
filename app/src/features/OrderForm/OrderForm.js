@@ -18,7 +18,11 @@ class OrderForm extends React.PureComponent {
   }
 
   submitOrder(event) {
+    const { addItem, clearError, clearSuccess } = this.props;
     event.preventDefault();
+    clearError();
+    clearSuccess();
+    addItem(this.state);
   }
 
   render() {
@@ -58,11 +62,8 @@ class OrderForm extends React.PureComponent {
 
 OrderForm.propTypes = {
   addItem: PropTypes.func.isRequired,
-  addSuccess: PropTypes.bool,
-};
-
-OrderForm.defaultProps = {
-  addSuccess: null,
+  clearError: PropTypes.func.isRequired,
+  clearSuccess: PropTypes.func.isRequired,
 };
 
 export default OrderForm;
