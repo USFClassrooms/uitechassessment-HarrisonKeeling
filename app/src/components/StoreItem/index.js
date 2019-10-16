@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import React from 'react';
+import './StoreItem.scss';
 
 class StoreItem extends React.PureComponent {
   render() {
@@ -13,10 +14,12 @@ class StoreItem extends React.PureComponent {
 
     return (
       <div className="storeItem">
-        <h2>{name}</h2>
-        <span className="id">{id}</span>
-        <span className="price">{price}</span>
-        <span className="amount">{amount}</span>
+        <div className="header">
+          <h2>{name}</h2>
+          <span className="id">{`Product ID: ${id}`}</span>
+          <span className="price">{`Price: ${price}`}</span>
+        </div>
+        <span className="amount">{`Amount: ${amount}`}</span>
         <p>{description}</p>
       </div>
     );
